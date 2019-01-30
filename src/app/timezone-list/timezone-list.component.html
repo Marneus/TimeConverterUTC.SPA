@@ -1,0 +1,18 @@
+<div class="container container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <select [(ngModel)]="selectedUtc" class="custom-select">
+          <option [ngValue]="undefined" disabled  selected> Choose a TimeZone</option>
+        <option *ngFor="let timezone of timezones" [value]="timezone.utcFormat">
+          {{timezone.displayName}}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-2">
+          <div class="input-group-prepend">
+          </div>
+          <input readonly="true" type="text" class="form-control" placeholder={{selectedUtc}} aria-label="Selected Utc" aria-describedby="basic-addon1">
+        </div>
+  </div>
+</div>
+
